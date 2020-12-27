@@ -1,6 +1,6 @@
-Chromecast Tweaks
+# Chromecast Tweaks
 
-Various tweaks, scripts, and tricks for the NVIDIA Shield TV.
+Various tweaks, scripts, and tricks for the 2020 Chromecast.
 
 ## Developer Options
 
