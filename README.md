@@ -15,12 +15,12 @@ Various tweaks, scripts, and tricks for the 2020 Chromecast.
 - Troubleshooting > Alternate Button Handlng
 
 #### Youtube Button
-Single Press = Play/Pause
-Long Press = Stop
+- Single Press = Play/Pause
+- Long Press = Stop
 
 #### Netflix Button
-Single Press = Keycode 82 (Menu)
-Long Press = System Settings
+- Single Press = Keycode 82 (Menu)
+- Long Press = System Settings
 
 ## Apps to Install (Store)
 
