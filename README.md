@@ -28,7 +28,6 @@ Various tweaks, scripts, and tricks for the 2020 Chromecast.
 - Youtube
 - Netflix
 - Prime Video
-- JustWatch
 - Tivimate
 - Kodi
 - Button Mapper
@@ -36,13 +35,11 @@ Various tweaks, scripts, and tricks for the 2020 Chromecast.
 ## Apps to Install (Sideload)
 
 - KodiLauncher
-- WWE
 - Settings
 
 ## KODI Addons to Install
 
-- GRID Skin
-- NHL Live
+- GRID Skin (Custom)
 - JellyFin
 
 ## KODI Sources to Add
@@ -52,9 +49,9 @@ Various tweaks, scripts, and tricks for the 2020 Chromecast.
 
 ## Kodi Menu Structure
 
-| **Shows (All Shows)** | **Movies (All Movies** | **Sports (Jellyfin Sports)** | **Live TV (Tivimate)** | **YouTube (YouTube App)** | **On Demand (JustWatch)** | **Settings (Kodi Settings)** |
+| **Shows (All Shows)** | **Movies (All Movies** | **Sports (Jellyfin Sports)** | **Live TV (Tivimate)** | **YouTube (YouTube App)** | **On Demand** | **Settings (Kodi Settings)** |
 |:-----------------:|:------------------:|:------------------------:|:------------------:|:---------------------:|:---------------------:|:------------------------:|
-|       Dramas      |                    |         WWE Live         |     Recordings     |                       |        Netflix        |        TV Settings       |
-|      Comedies     |                    |         NHL Live         |                    |                       |      Prime Video      |           Files          |
+|       Dramas      |                    |         NHL Live (JF)    |     Recordings     |                       |        Netflix        |        TV Settings       |
+|      Comedies     |                    |                          |                    |                       |      Prime Video      |           Files          |
 |      Cartoons     |                    |                          |                    |                       |      Disney Plus      |           Apps           |
 |      Holidays     |                    |                          |                    |                       |                       |           Exit           |
