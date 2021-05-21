@@ -60,4 +60,30 @@ Various tweaks, scripts, and tricks for the 2020 Chromecast.
 
 - Settings Level
   - Expert
-- 
+- Media
+  - General
+    - Show Parent Items = DISABLED
+    - Show Add Source = DISABLED
+  - Videos
+    - Show "All Items" entry = DISABLED
+    - Show Movie Sets = ENABLED
+    - Select First Unwatched Season/Episode = 
+- Interface
+  - Skin
+    - Skin = TrueGrid
+    - Show RSS = DISABLED
+  - Regional
+    - Language = ENGLISH 
+- Player
+  - Language
+    - Preferred Audio = ENGLISH
+    - Preferred Subtitle = NONE
+  - Accessibility 
+- Services
+  - General
+    - Device Name = NAME
+- System
+  - Add-Ons
+    - Updates = AUTOMATIC
+    - Notifications = ENABLED
+    - Unknown Sources = ENABLED
