@@ -47,7 +47,7 @@ Various tweaks, scripts, and tricks for the 2020 Chromecast.
 - Jellyfin (https://kodi.jellyfin.org)
 - Recordings
 
-## Kodi Menu Structure
+## KODI Menu Structure
 
 | **Shows (All Shows)** | **Movies (All Movies** | **Sports (Jellyfin Sports)** | **Live TV (Tivimate)** | **YouTube (YouTube App)** | **On Demand** | **Settings (Kodi Settings)** |
 |:-----------------:|:------------------:|:------------------------:|:------------------:|:---------------------:|:---------------------:|:------------------------:|
@@ -55,3 +55,8 @@ Various tweaks, scripts, and tricks for the 2020 Chromecast.
 |      Comedies     |                    |                          |                    |                       |      Prime Video      |           Files          |
 |      Cartoons     |                    |                          |                    |                       |      Disney Plus      |           Apps           |
 |      Holidays     |                    |                          |                    |                       |                       |           Exit           |
+
+## KODI Settings
+
+- Settings Level
+-- Expert
