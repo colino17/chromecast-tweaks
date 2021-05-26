@@ -11,8 +11,9 @@ Various tweaks, scripts, and tricks for the 2020 Chromecast.
 ## Button Mapping
 
 #### Settings
-- adb shell pm grant flar2.homebutton android.permission.WRITE_SECURE_SETTINGS
 - Troubleshooting > Alternate Button Handlng
+- Advanced permissions:
+`adb shell pm grant flar2.homebutton android.permission.WRITE_SECURE_SETTINGS`
 
 #### Youtube Button
 - Single Press = Play/Pause
@@ -39,7 +40,7 @@ Various tweaks, scripts, and tricks for the 2020 Chromecast.
 
 ## KODI Addons to Install
 
-- GRID Skin (Custom)
+- TrueGrid Skin
 - JellyFin
 
 ## KODI Sources to Add
@@ -51,7 +52,7 @@ Various tweaks, scripts, and tricks for the 2020 Chromecast.
 
 | **Shows (All Shows)** | **Movies (All Movies** | **Sports (Jellyfin Sports)** | **Live TV (Tivimate)** | **YouTube (YouTube App)** | **On Demand** | **Settings (Kodi Settings)** |
 |:-----------------:|:------------------:|:------------------------:|:------------------:|:---------------------:|:---------------------:|:------------------------:|
-|       Dramas      |                    |         NHL Live (JF)    |     Recordings     |                       |        Netflix        |        TV Settings       |
+|       Dramas      |                    |    NHL Live (JellyFin)   |     Recordings     |                       |        Netflix        |        TV Settings       |
 |      Comedies     |                    |                          |                    |                       |      Prime Video      |           Files          |
 |      Cartoons     |                    |                          |                    |                       |      Disney Plus      |           Apps           |
 |      Holidays     |                    |                          |                    |                       |                       |           Exit           |
@@ -78,7 +79,6 @@ Various tweaks, scripts, and tricks for the 2020 Chromecast.
   - Language
     - Preferred Audio = ENGLISH
     - Preferred Subtitle = NONE
-  - Accessibility 
 - Services
   - General
     - Device Name = NAME
