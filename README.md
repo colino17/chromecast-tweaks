@@ -40,7 +40,7 @@ Various tweaks, scripts, and tricks for the 2020 Chromecast.
 
 ## KODI Addons to Install
 
-- TrueGrid Skin
+- Arctic Breeze Skin (https://github.com/colino17/skin.arctic.breeze)
 - JellyFin
 
 ## KODI Sources to Add
