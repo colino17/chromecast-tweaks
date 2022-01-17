@@ -1,6 +1,6 @@
 # Chromecast Tweaks
 
-Various tweaks, scripts, and tricks for the 2020 Chromecast.
+Various tweaks, scripts, and tricks for the Chromecast with Google TV.
 
 ## Developer Options
 
@@ -9,53 +9,44 @@ Various tweaks, scripts, and tricks for the 2020 Chromecast.
 - Allow installing from unknown sources
 
 ## Button Mapping
+- Install tvQuickActions and LeanKey Keyboard from Play Store
 
 #### Settings
-- Troubleshooting > Alternate Button Handlng
-- Advanced permissions:
-`adb shell pm grant flar2.homebutton android.permission.WRITE_SECURE_SETTINGS`
+- System > Accessibility > tvQuickActions > Enable
+- Apps > Special App Access > Display Over Other Apps > tvQuickActions > Enable
+- System > Keyboard > Manage keyboards > LeanKey Keyboard > Enable
+- System > Keyboard > Current Keyboard > LeanKey Keyboard
+- Grant permissions via ADB:
+'''tvQuickActions > Enable'''
 
 #### Youtube Button
 - Single Press = Play/Pause
 - Long Press = Stop
 
 #### Netflix Button
-- Single Press = Keycode 82 (Menu)
+- Single Press = Menu Key
 - Long Press = System Settings
 
 ## Apps to Install (Store)
 
 - Disney Plus
-- Youtube
 - Netflix
 - Prime Video
-- Tivimate
-- Kodi
-- Button Mapper
+- tvQuickActions
+- LeanKey Keyboard
 
 ## Apps to Install (Sideload)
 
-- KodiLauncher
-- Settings
+- Kodi(Custom Build)
+- Smart Tube Next
 
-## KODI Addons to Install
+## KODI Setup
+- Push backup settings to new device
+''' adb connect ipaddress
+adb devices
+adb push .kodi/. /sdcard/Android/data/org.xbmc.kodi/files/.kodi'''
 
-- Arctic Breeze Skin (https://github.com/colino17/skin.arctic.breeze)
-- JellyFin
 
-## KODI Sources to Add
-
-- Jellyfin (https://kodi.jellyfin.org)
-- Recordings
-
-## KODI Menu Structure
-
-| **Shows (All Shows)** | **Movies (All Movies** | **Sports (Jellyfin Sports)** | **Live TV (Tivimate)** | **YouTube (YouTube App)** | **On Demand** | **Settings (Kodi Settings)** |
-|:-----------------:|:------------------:|:------------------------:|:------------------:|:---------------------:|:---------------------:|:------------------------:|
-|       Dramas      |                    |    NHL Live (JellyFin)   |     Recordings     |                       |        Netflix        |        TV Settings       |
-|      Comedies     |                    |                          |                    |                       |      Prime Video      |           Files          |
-|      Cartoons     |                    |                          |                    |                       |      Disney Plus      |           Apps           |
-|      Holidays     |                    |                          |                    |                       |                       |           Exit           |
 
 ## KODI Settings
 
