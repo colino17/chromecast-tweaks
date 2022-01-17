@@ -17,7 +17,9 @@ Various tweaks, scripts, and tricks for the Chromecast with Google TV.
 - System > Keyboard > Manage keyboards > LeanKey Keyboard > Enable
 - System > Keyboard > Current Keyboard > LeanKey Keyboard
 - Grant permissions via ADB:
-'''tvQuickActions > Enable'''
+```
+adb shell pm grant dev.vodik7.tvquickactions android.permission.WRITE_SECURE_SETTINGS
+```
 
 #### Youtube Button
 - Single Press = Play/Pause
@@ -42,9 +44,10 @@ Various tweaks, scripts, and tricks for the Chromecast with Google TV.
 
 ## KODI Setup
 - Push backup settings to new device
-''' adb connect ipaddress
+```adb connect ipaddress
 adb devices
-adb push .kodi/. /sdcard/Android/data/org.xbmc.kodi/files/.kodi'''
+adb push .kodi/. /sdcard/Android/data/org.xbmc.kodi/files/.kodi
+```
 
 
 
