@@ -18,6 +18,8 @@ Install tvQuickActions and LeanKey Keyboard from Play Store
 - System > Keyboard > Current Keyboard > LeanKey Keyboard
 - Grant permissions via ADB:
 ```
+adb connect ipaddress
+adb devices
 adb shell pm grant dev.vodik7.tvquickactions android.permission.WRITE_SECURE_SETTINGS
 ```
 
@@ -43,10 +45,18 @@ adb shell pm grant dev.vodik7.tvquickactions android.permission.WRITE_SECURE_SET
 - Smart Tube Next
 
 ## KODI Setup
+- Install custom build of Kodi (designed to work as a launcher)
+```
+adb install Kodi.apk
+```
 - Push backup settings to new device
-```adb connect ipaddress
-adb devices
+```
 adb push .kodi/. /sdcard/Android/data/org.xbmc.kodi/files/.kodi
+```
+- Disable default launcher
+```
+adb shell pm disable-user --user 0 com.google.android.apps.tv.launcherx
+adb shell pm disable-user --user 0 com.google.android.tungsten.setupwraith
 ```
 
 #### KODI Settings
