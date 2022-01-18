@@ -9,7 +9,7 @@ Various tweaks, scripts, and tricks for the Chromecast with Google TV.
 - Allow installing from unknown sources
 
 ## Button Mapping
-- Install tvQuickActions and LeanKey Keyboard from Play Store
+Install tvQuickActions and LeanKey Keyboard from Play Store
 
 #### Settings
 - System > Accessibility > tvQuickActions > Enable
@@ -49,9 +49,7 @@ adb devices
 adb push .kodi/. /sdcard/Android/data/org.xbmc.kodi/files/.kodi
 ```
 
-
-
-## KODI Settings
+#### KODI Settings
 
 - Settings Level
   - Expert
