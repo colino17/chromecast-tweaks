@@ -38,6 +38,8 @@ adb shell pm grant dev.vodik7.tvquickactions android.permission.WRITE_SECURE_SET
 - Prime Video
 - tvQuickActions
 - LeanKey Keyboard
+- Sportsnet
+- Surfshark
 
 ## Apps to Install (Sideload)
 
