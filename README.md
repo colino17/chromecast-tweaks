@@ -62,6 +62,10 @@ adb shell pm disable-user --user 0 com.google.android.tungsten.setupwraith
 ```
 
 #### KODI Settings
+- Settings > File Manager > Add Source > Add Network Location
+  - Protocol = NFS
+  - Server = Server IP
+  - Remote Location = Storage
 
 - Settings Level
   - Expert
@@ -72,7 +76,7 @@ adb shell pm disable-user --user 0 com.google.android.tungsten.setupwraith
   - Videos
     - Show "All Items" entry = DISABLED
     - Show Movie Sets = ENABLED
-    - Select First Unwatched Season/Episode = 
+    - Select First Unwatched Season/Episode = First Entry
 - Interface
   - Skin
     - Skin = TrueGrid
