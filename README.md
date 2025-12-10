@@ -21,7 +21,7 @@
 - tvQuickActionsPro
 - Sportsnet
 - Surfshark
-- LocalSend
+- CX File Manager
 - Tubi
 
 ## Apps to Install (Sideload)
@@ -39,8 +39,7 @@
 
 #### Youtube Button Mapping
 
-- Single Press = Play/Pause
-- Long Press = Stop
+- Single Press = Refresh Channels
 
 #### Netflix Button Mapping
 
