@@ -1,15 +1,81 @@
 #!/bin/bash
 
-# Usage = sh chromecast_setup.sh ipaddress
+# Usage = sh chromecast_setup.sh ipaddress:port
 
 # Download Packages
+echo "Downloading updated APKs.."
+sleep 3
 curl -s https://api.github.com/repos/Sam42a/DUNE/releases/latest | grep "browser_download_url.*.apk" | cut -d : -f 2,3 | tr -d \" | wget -O Apps/dune.apk -qi -
 curl -s https://api.github.com/repos/yuliskov/SmartTube/releases/latest | grep "browser_download_url.*v7a.apk" | cut -d : -f 2,3 | tr -d \" | wget -O Apps/st.apk -qi -
+sleep 3
 
 # Connect to Device
-adb connect $1:5555
+echo "Connecting to device..."
+sleep 3
+adb connect $1
+sleep 3
+adb connect $1
+
+# Install Play Store Apps
+echo "Installing Play Store applications..."
+sleep 3
+adb shell am start -a android.intent.action.VIEW -d 'market://details?id=dev.vodik7.tvquickactions'
+sleep 3
+adb shell input keyevent 23
+sleep 10
+adb shell am start -a android.intent.action.VIEW -d 'market://details?id=com.spocky.projengmenu'
+sleep 3
+adb shell input keyevent 23
+sleep 10
+adb shell am start -a android.intent.action.VIEW -d 'market://details?id=com.cxinventor.file.explorer'
+sleep 3
+adb shell input keyevent 23
+sleep 10
+adb shell am start -a android.intent.action.VIEW -d 'market://details?id=se.hedekonsult.sparkle'
+sleep 3
+adb shell input keyevent 23
+sleep 10
+adb shell am start -a android.intent.action.VIEW -d 'market://details?id=com.netflix.ninja'
+sleep 3
+adb shell input keyevent 23
+sleep 10
+adb shell am start -a android.intent.action.VIEW -d 'market://details?id=com.amazon.amazonvideo.livingroom'
+sleep 3
+adb shell input keyevent 23
+sleep 10
+adb shell am start -a android.intent.action.VIEW -d 'market://details?id=com.rogers.sportsnet.sportsnet'
+sleep 3
+adb shell input keyevent 23
+sleep 10
+adb shell am start -a android.intent.action.VIEW -d 'market://details?id=com.tubitv'
+sleep 3
+adb shell input keyevent 23
+sleep 10
+adb shell am start -a android.intent.action.VIEW -d 'market://details?id=ca.cbc.android.cbctv'
+sleep 3
+adb shell input keyevent 23
+sleep 10
+adb shell am start -a android.intent.action.VIEW -d 'market://details?id=com.disney.disneyplus'
+sleep 3
+adb shell input keyevent 23
+sleep 10
+adb shell am start -a android.intent.action.VIEW -d 'market://details?id=com.surfshark.vpnclient.android'
+sleep 3
+adb shell input keyevent 23
+echo "Setup will continue in 5 minutes..."
+sleep 1m
+echo "Setup will continue in 4 minutes..."
+sleep 1m
+echo "Setup will continue in 3 minutes..."
+sleep 1m
+echo "Setup will continue in 2 minutes..."
+sleep 1m
+echo "Setup will continue in 1 minutes..."
+sleep 1m
 
 # Grant Permissions
+echo "Granting app permissions..."
+sleep 3
 adb shell appops set dev.vodik7.tvquickactions GET_USAGE_STATS allow
 adb shell pm grant dev.vodik7.tvquickactions android.permission.WRITE_SECURE_SETTINGS
 adb shell appops set dev.vodik7.tvquickactions SYSTEM_ALERT_WINDOW allow
@@ -18,17 +84,25 @@ adb shell settings put secure enabled_accessibility_services com.spocky.projengm
 adb shell settings put secure enabled_notification_listeners com.google.android.apps.tv.launcherx/com.google.android.apps.tv.launcherx.coreservices.notificationlistener.TvNotificationListenerService:com.spocky.projengmenu/com.spocky.projengmenu.services.notification.NotificationListener
 
 # Sideload Applications
+echo "Installing additional applications..."
+sleep 3
 adb install Apps/icons.apk
 adb install Apps/dune.apk
 adb install Apps/st.apk
 
 # Transfer Settings Files
+echo "Transferring settings files..."
+sleep 3
 adb push Settings/* /storage/emulated/0/Documents/
 
 # Restore Projectivy Settings
+echo "Restoring launcher settings..."
+sleep 3
 adb shell am start -n com.cxinventor.file.explorer/com.alphainventor.filemanager.activity.MainActivity -a android.intent.action.VIEW -d file:///storage/emulated/0/Documents/pl.plbackup
 
 # Disable Packages
+echo "Disabling extra packages..."
+sleep 3
 adb shell pm disable-user --user 0 com.google.android.play.games
 adb shell pm disable-user --user 0 com.google.android.videos
 adb shell pm disable-user --user 0 com.android.printspooler
@@ -40,5 +114,7 @@ adb shell pm disable-user --user 0 com.google.android.syncadapters.calendar
 adb shell pm disable-user --user 0 com.google.android.marvin.talkback
 
 # Disable Default Launcher
+echo "Disabling default launcher..."
+sleep 3
 adb shell pm disable-user --user 0 com.google.android.apps.tv.launcherx
 adb shell pm disable-user --user 0 com.google.android.tungsten.setupwraith
