@@ -2,57 +2,35 @@
 
 ## Initial Setup
 
-- Factory reset and setup
-- Setup remote settings
-- Disable/Uninstall bloatware
-- Install Play Store Apps (see list below)
+- Factory reset the device if needed and follow the guided setup process including setting up any remote control settings.
+
+## Activate ADB and Pair Device
+
+- Settings >> System >> About >> Android TV OS Build (press seven times)
+- Settings >> System >> Developer Options >> USB Debugging >> Enable
+- Settings >> System >> Developer Options >> Wireless Debugging >> Enable
+- Settings >> System >> Developer Options >> Wireless Debugging >> Pair with Device Code
+- Enter the following command on your computer command line:
+  ```bash
+  adb pair ipaddress:port
+  ```
+- Enter the pairing code
+
+## Setup Script
+- Setup a Chromecast folder with the setup script and a subfolder for Apps, as well as a subfolder that contains pl.plbackup and tvqa.zip
+- Note the ADB connection IP address and port now that you've paired your device
+- Enter the following command on your computer command line:
+  ```bash
+  cd /path/to/chromecast/folder
+  sh chromecast_setup.sh ipaddress:port
+  ```
+
+# Additional Setup
 - Setup VPN for Sportsnet to autostart at correct location
-- Enable Developer Options
-- Turn on Wireless ADB debugging
-- Sideload Apps (see list below)
+- Login to all app accounts and setup app preferences
+- Login to Smarttube and restore backup from Google Drive
 
-## Apps to Install (Store)
-
-- Projectivy
-- Disney Plus
-- Netflix
-- Prime Video
-- TiviMate
-- tvQuickActionsPro
-- Sportsnet
-- Surfshark
-- CX File Manager
-- Tubi
-
-## Apps to Install (Sideload)
-
-- Dune
-- SmartTube
-
-## Button Mapping
-
-#### Settings
-
-- System > Accessibility > tvQuickActions > Enable
-- Apps > Special App Access > Usage Access > tvQuickActions > Enable
-- Settings > General > Use Service to Track Foreground Events
-
-#### Youtube Button Mapping
-
-- Single Press = Refresh Channels
-
-#### Netflix Button Mapping
-
-- Single Press = Previous App
-- Long Press = Recent Apps
-
-## Dune/Jellyfin Settings
-
-- Customization
-    - Enhanced Tweaks > Disable Random TV Button
-    - Default Rating Type > Stars
-
-## Projectivy Setup
-- System > Accessibility > Projectivy > Enable
-- Apps > Special App Access > Notification Access > Projectivy > Enable
-- Restore Backup using LocalSend
+# Setup TV Quick Actions
+- Settings >> ADB >> Restore ADB Port >> Wireless Debugging >> Enable >> Pair with Device Code >> Always Allow
+- Settings >> ADB >> Restore ADB Port on Boot
+- Settings >> Backup >> Restore Backup
