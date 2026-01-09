@@ -4,6 +4,9 @@
 
 - Factory reset the device if needed and follow the guided setup process including setting up any remote control settings.
 
+## Disable Play Protect
+- Settings >> Apps >> Security >> Disable Scan Apps
+
 ## Activate ADB and Pair Device
 
 - Settings >> System >> About >> Android TV OS Build (press seven times)
