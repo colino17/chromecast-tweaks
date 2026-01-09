@@ -15,6 +15,7 @@ sleep 3
 adb connect $1
 sleep 3
 adb connect $1
+sleep 3
 
 # Install Play Store Apps
 echo "Installing Play Store applications..."
@@ -73,32 +74,38 @@ sleep 1m
 echo "Setup will continue in 1 minutes..."
 sleep 1m
 
+# Sideload Applications
+echo "Installing additional applications..."
+sleep 3
+adb install Apps/autoadb.apk
+adb install Apps/icons.apk
+adb install Apps/dune.apk
+adb install Apps/st.apk
+sleep 3
+
 # Grant Permissions
 echo "Granting app permissions..."
 sleep 3
 adb shell appops set dev.vodik7.tvquickactions GET_USAGE_STATS allow
-adb shell pm grant dev.vodik7.tvquickactions android.permission.WRITE_SECURE_SETTINGS
 adb shell appops set dev.vodik7.tvquickactions SYSTEM_ALERT_WINDOW allow
 adb shell appops set com.cxinventor.file.explorer MANAGE_EXTERNAL_STORAGE allow
+adb shell pm grant dev.vodik7.tvquickactions android.permission.WRITE_SECURE_SETTINGS
+adb shell pm grant com.tpn.adbautoenable android.permission.WRITE_SECURE_SETTINGS
 adb shell settings put secure enabled_accessibility_services com.spocky.projengmenu/com.spocky.projengmenu.services.ProjectivyAccessibilityService:dev.vodik7.tvquickactions/.KeyAccessibilityService
 adb shell settings put secure enabled_notification_listeners com.google.android.apps.tv.launcherx/com.google.android.apps.tv.launcherx.coreservices.notificationlistener.TvNotificationListenerService:com.spocky.projengmenu/com.spocky.projengmenu.services.notification.NotificationListener
-
-# Sideload Applications
-echo "Installing additional applications..."
 sleep 3
-adb install Apps/icons.apk
-adb install Apps/dune.apk
-adb install Apps/st.apk
 
 # Transfer Settings Files
 echo "Transferring settings files..."
 sleep 3
 adb push Settings/* /storage/emulated/0/Documents/
+sleep 3
 
 # Restore Projectivy Settings
 echo "Restoring launcher settings..."
 sleep 3
 adb shell am start -n com.cxinventor.file.explorer/com.alphainventor.filemanager.activity.MainActivity -a android.intent.action.VIEW -d file:///storage/emulated/0/Documents/pl.plbackup
+sleep 3
 
 # Disable Packages
 echo "Disabling extra packages..."
@@ -112,9 +119,11 @@ adb shell pm disable-user --user 0 com.android.tv.feedbackconsent
 adb shell pm disable-user --user 0 com.android.providers.calendar
 adb shell pm disable-user --user 0 com.google.android.syncadapters.calendar
 adb shell pm disable-user --user 0 com.google.android.marvin.talkback
+sleep 3
 
 # Disable Default Launcher
 echo "Disabling default launcher..."
 sleep 3
 adb shell pm disable-user --user 0 com.google.android.apps.tv.launcherx
 adb shell pm disable-user --user 0 com.google.android.tungsten.setupwraith
+sleep 3
