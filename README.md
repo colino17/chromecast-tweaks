@@ -41,3 +41,6 @@
 
 # Setup TV Quick Actions
 - Settings >> Backup >> Restore Backup
+
+# Reboot Device
+- Reboot Device and wait a couple minutes
