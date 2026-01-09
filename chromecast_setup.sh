@@ -17,49 +17,62 @@ sleep 3
 adb connect $1
 sleep 3
 
+# Uninstall Packages
+echo "Uninstalling bloatware..."
+sleep 3
+adb uninstall ca.bellmedia.cravetv
+adb uninstall com.disney.disneyplus
+adb uninstall com.quickplay.android.bellmediaplayer
+adb uninstall com.netflix.ninja
+adb uninstall com.cbs.ca
+adb uninstall com.amazon.amazonvideo.livingroom
+adb uninstall com.tubitv
+adb uninstall com.google.android.youtube.tv
+sleep 3
+
 # Install Play Store Apps
 echo "Installing Play Store applications..."
 sleep 3
 adb shell am start -a android.intent.action.VIEW -d 'market://details?id=dev.vodik7.tvquickactions'
 sleep 3
 adb shell input keyevent 23
-sleep 10
+sleep 15
 adb shell am start -a android.intent.action.VIEW -d 'market://details?id=com.spocky.projengmenu'
 sleep 3
 adb shell input keyevent 23
-sleep 10
+sleep 15
 adb shell am start -a android.intent.action.VIEW -d 'market://details?id=com.cxinventor.file.explorer'
 sleep 3
 adb shell input keyevent 23
-sleep 10
+sleep 15
 adb shell am start -a android.intent.action.VIEW -d 'market://details?id=se.hedekonsult.sparkle'
 sleep 3
 adb shell input keyevent 23
-sleep 10
+sleep 15
 adb shell am start -a android.intent.action.VIEW -d 'market://details?id=com.netflix.ninja'
 sleep 3
 adb shell input keyevent 23
-sleep 10
+sleep 15
 adb shell am start -a android.intent.action.VIEW -d 'market://details?id=com.amazon.amazonvideo.livingroom'
 sleep 3
 adb shell input keyevent 23
-sleep 10
+sleep 15
 adb shell am start -a android.intent.action.VIEW -d 'market://details?id=com.rogers.sportsnet.sportsnet'
 sleep 3
 adb shell input keyevent 23
-sleep 10
+sleep 15
 adb shell am start -a android.intent.action.VIEW -d 'market://details?id=com.tubitv'
 sleep 3
 adb shell input keyevent 23
-sleep 10
+sleep 15
 adb shell am start -a android.intent.action.VIEW -d 'market://details?id=ca.cbc.android.cbctv'
 sleep 3
 adb shell input keyevent 23
-sleep 10
+sleep 15
 adb shell am start -a android.intent.action.VIEW -d 'market://details?id=com.disney.disneyplus'
 sleep 3
 adb shell input keyevent 23
-sleep 10
+sleep 15
 adb shell am start -a android.intent.action.VIEW -d 'market://details?id=com.surfshark.vpnclient.android'
 sleep 3
 adb shell input keyevent 23
@@ -73,6 +86,10 @@ echo "Setup will continue in 2 minutes..."
 sleep 1m
 echo "Setup will continue in 1 minutes..."
 sleep 1m
+
+# Disable Play Protect
+ adb shell settings put global package_verifier_user_consent -1
+ adb shell settings put global install_non_market_apps 1
 
 # Sideload Applications
 echo "Installing additional applications..."
@@ -101,12 +118,6 @@ sleep 3
 adb push Settings/* /storage/emulated/0/Documents/
 sleep 3
 
-# Restore Projectivy Settings
-echo "Restoring launcher settings..."
-sleep 3
-adb shell am start -n com.cxinventor.file.explorer/com.alphainventor.filemanager.activity.MainActivity -a android.intent.action.VIEW -d file:///storage/emulated/0/Documents/pl.plbackup
-sleep 3
-
 # Disable Packages
 echo "Disabling extra packages..."
 sleep 3
@@ -114,7 +125,6 @@ adb shell pm disable-user --user 0 com.google.android.play.games
 adb shell pm disable-user --user 0 com.google.android.videos
 adb shell pm disable-user --user 0 com.android.printspooler
 adb shell pm disable-user --user 0 com.google.android.partnersetup
-adb shell pm disable-user --user 0 com.google.android.gms.feedback
 adb shell pm disable-user --user 0 com.android.tv.feedbackconsent
 adb shell pm disable-user --user 0 com.android.providers.calendar
 adb shell pm disable-user --user 0 com.google.android.syncadapters.calendar
@@ -127,3 +137,19 @@ sleep 3
 adb shell pm disable-user --user 0 com.google.android.apps.tv.launcherx
 adb shell pm disable-user --user 0 com.google.android.tungsten.setupwraith
 sleep 3
+
+# Restore Projectivy Settings
+while true; do
+    read -p "Have you logged in to Jellyfin? (Yes or Y to continue): " response
+    if [[ $response =~ ^[Yy]$ ]]; then
+        echo "Continuing setup..."
+        sleep 3
+        break
+    else
+        echo "Please login and respond with 'yes' or 'y' to continue."
+    fi
+done
+echo "Restoring launcher settings..."
+sleep 3
+adb shell am start -n com.cxinventor.file.explorer/com.alphainventor.filemanager.activity.MainActivity -a android.intent.action.VIEW -d file:///storage/emulated/0/Documents/pl.plbackup
+sleep 2m
