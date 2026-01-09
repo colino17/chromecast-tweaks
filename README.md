@@ -25,6 +25,9 @@
   sh chromecast_setup.sh ipaddress:port
   ```
 
+## Disable Automatic App Updates
+- Play Store >> Settings >> Auto Update Apps >> Don't Auto Update Apps
+
 # Additional Setup
 - Setup VPN for Sportsnet to autostart at correct location
 - Login to all app accounts and setup app preferences
