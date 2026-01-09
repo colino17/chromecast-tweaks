@@ -30,7 +30,13 @@
 - Login to all app accounts and setup app preferences
 - Login to Smarttube and restore backup from Google Drive
 
+# Setup ADB Auto Enable
+- Settings >> System >> Developer Options >> Wireless Debugging >> Enable
+- Settings >> System >> Developer Options >> Wireless Debugging >> Pair with Device Code
+- Go to "http://ipaddress:9093" in a web browser
+- Enter the pairing code and pairing port into the web interface and click "Pair Device"
+- Click "Switch to Port 5555 Now"
+- Reboot Device and wait a couple minutes
+
 # Setup TV Quick Actions
-- Settings >> ADB >> Restore ADB Port >> Wireless Debugging >> Enable >> Pair with Device Code >> Always Allow
-- Settings >> ADB >> Restore ADB Port on Boot
 - Settings >> Backup >> Restore Backup
