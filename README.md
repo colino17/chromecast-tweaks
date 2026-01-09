@@ -24,6 +24,7 @@
   cd /path/to/chromecast/folder
   sh chromecast_setup.sh ipaddress:port
   ```
+- At this point you will likely need to recommect to WIFI
 
 # Additional Setup
 - Setup VPN for Sportsnet to autostart at correct location
