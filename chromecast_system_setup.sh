@@ -45,7 +45,7 @@ adb shell am start -a android.intent.action.VIEW -d 'market://details?id=com.cxi
 sleep 3
 adb shell input keyevent 23
 sleep 15
-adb shell am start -a android.intent.action.VIEW -d 'market://details?id=se.hedekonsult.sparkle'
+adb shell am start -a android.intent.action.VIEW -d 'market://details?id=ar.tvplayer.tv'
 sleep 3
 adb shell input keyevent 23
 sleep 15
