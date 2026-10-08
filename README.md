@@ -33,6 +33,8 @@
 - Setup VPN for Sportsnet to autostart at correct location
 - Login to all app accounts and setup app preferences
 - Login to Smarttube and restore backup from Google Drive
+- Open Tivimate and unlock Premium
+- Open CX Files and open the Tivimate backup file
 
 ## Setup Script
 - Note the ADB connection IP address and port (the port has likely changed since the network reconnect)
