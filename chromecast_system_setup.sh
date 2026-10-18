@@ -5,7 +5,6 @@
 # Download Packages
 echo "Downloading updated APKs.."
 sleep 3
-curl -s https://api.github.com/repos/Sam42a/DUNE/releases/latest | grep "browser_download_url.*.apk" | cut -d : -f 2,3 | tr -d \" | wget -O Apps/dune.apk -qi -
 curl -s https://api.github.com/repos/yuliskov/SmartTube/releases/latest | grep "browser_download_url.*v7a.apk" | cut -d : -f 2,3 | tr -d \" | wget -O Apps/st.apk -qi -
 sleep 3
 
@@ -57,15 +56,7 @@ adb shell am start -a android.intent.action.VIEW -d 'market://details?id=com.ama
 sleep 3
 adb shell input keyevent 23
 sleep 15
-adb shell am start -a android.intent.action.VIEW -d 'market://details?id=com.rogers.sportsnet.sportsnet'
-sleep 3
-adb shell input keyevent 23
-sleep 15
-adb shell am start -a android.intent.action.VIEW -d 'market://details?id=com.tubitv'
-sleep 3
-adb shell input keyevent 23
-sleep 15
-adb shell am start -a android.intent.action.VIEW -d 'market://details?id=ca.cbc.android.cbctv'
+adb shell am start -a android.intent.action.VIEW -d 'market://details?id=org.moonfin.androidtv'
 sleep 3
 adb shell input keyevent 23
 sleep 15
@@ -94,9 +85,7 @@ sleep 1m
 # Sideload Applications
 echo "Installing additional applications..."
 sleep 3
-adb install Apps/autoadb.apk
 adb install Apps/icons.apk
-adb install Apps/dune.apk
 adb install Apps/st.apk
 sleep 3
 
@@ -107,7 +96,6 @@ adb shell appops set dev.vodik7.tvquickactions GET_USAGE_STATS allow
 adb shell appops set dev.vodik7.tvquickactions SYSTEM_ALERT_WINDOW allow
 adb shell appops set com.cxinventor.file.explorer MANAGE_EXTERNAL_STORAGE allow
 adb shell pm grant dev.vodik7.tvquickactions android.permission.WRITE_SECURE_SETTINGS
-adb shell pm grant com.tpn.adbautoenable android.permission.WRITE_SECURE_SETTINGS
 adb shell settings put secure enabled_accessibility_services com.spocky.projengmenu/com.spocky.projengmenu.services.ProjectivyAccessibilityService:dev.vodik7.tvquickactions/.KeyAccessibilityService
 adb shell settings put secure enabled_notification_listeners com.google.android.apps.tv.launcherx/com.google.android.apps.tv.launcherx.coreservices.notificationlistener.TvNotificationListenerService:com.spocky.projengmenu/com.spocky.projengmenu.services.notification.NotificationListener
 sleep 3
