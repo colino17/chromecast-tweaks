@@ -12,7 +12,7 @@ sleep 3
 
 # Restore Projectivy Settings
 while true; do
-    read -p "Have you logged in to Jellyfin? (Yes or Y to continue): " response
+    read -p "Have you logged in to Moonfin and Jellyshim? (Yes or Y to continue): " response
     if [[ $response =~ ^[Yy]$ ]]; then
         echo "Continuing setup..."
         sleep 3
