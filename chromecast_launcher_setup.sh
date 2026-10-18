@@ -25,3 +25,9 @@ echo "Restoring launcher settings..."
 sleep 3
 adb shell am start -n com.cxinventor.file.explorer/com.alphainventor.filemanager.activity.MainActivity -a android.intent.action.VIEW -d file:///storage/emulated/0/Documents/pl.plbackup
 sleep 2m
+
+# Restore Tivimate Settings
+echo "Restoring Tivimate settings..."
+sleep 3
+adb shell am start -n com.cxinventor.file.explorer/com.alphainventor.filemanager.activity.MainActivity -a android.intent.action.VIEW -d file:///storage/emulated/0/Documents/tv.tmb
+sleep 2m
