@@ -7,6 +7,8 @@ echo "Downloading updated APKs.."
 sleep 3
 curl -s https://api.github.com/repos/yuliskov/SmartTube/releases/latest | grep "browser_download_url.*v7a.apk" | cut -d : -f 2,3 | tr -d \" | wget -O Apps/st.apk -qi -
 sleep 3
+curl -s https://api.github.com/repos/colino17/jellyshim/releases/latest | grep "browser_download_url.*.apk" | cut -d : -f 2,3 | tr -d \" | wget -O Apps/jellyshim.apk -qi -
+sleep 3
 
 # Connect to Device
 echo "Connecting to device..."
