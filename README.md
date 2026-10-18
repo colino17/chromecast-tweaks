@@ -30,7 +30,6 @@
 - You will need to connect to your WiFi network again at this point
 
 # Additional Setup
-- Setup VPN for Sportsnet to autostart at correct location
 - Login to all app accounts and setup app preferences
 - Login to Smarttube and restore backup from Google Drive
 - Open Tivimate and unlock Premium
@@ -44,16 +43,9 @@
   sh chromecast_launcher_setup.sh ipaddress:port
   ```
 
-# Setup ADB Auto Enable
-- Settings >> System >> Developer Options >> Wireless Debugging >> Enable
-- Settings >> System >> Developer Options >> Wireless Debugging >> Pair with Device Code
-- Go to "http://ipaddress:9093" in a web browser
-- Enter the pairing code and pairing port into the web interface and click "Pair Device"
-- Click "Switch to Port 5555 Now"
-- Reboot Device and wait a couple minutes
-
 # Setup TV Quick Actions
 - Settings >> Backup >> Restore Backup
+- Confirm ADB is working
 
 # Reboot Device
 - Reboot Device and wait a couple minutes
