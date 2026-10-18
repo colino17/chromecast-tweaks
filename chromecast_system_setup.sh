@@ -87,6 +87,7 @@ echo "Installing additional applications..."
 sleep 3
 adb install Apps/icons.apk
 adb install Apps/st.apk
+adb install Apps/jellyshim.apk
 sleep 3
 
 # Grant Permissions
